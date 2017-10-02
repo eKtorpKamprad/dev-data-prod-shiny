@@ -7,8 +7,13 @@
 #    http://shiny.rstudio.com/
 #
 
+list.of.packages <- c("shiny", "shinyjs", "markdown")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
 library(shiny)
 library(shinyjs)
+library(markdown)
 
 shinyUI(
     navbarPage("NYCflights13 Time Gained in Flight",
