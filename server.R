@@ -7,6 +7,10 @@
 #    http://shiny.rstudio.com/
 #
 
+list.of.packages <- c("shiny", "nycflights13", "dplyr", "ggplot2", "gridExtra")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
 library(shiny)
 library(nycflights13)
 library(dplyr)
